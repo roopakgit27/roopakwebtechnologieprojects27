@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <title>Document</title>
+       <style>
+       body{
+        background-image:repeating-linear-gradient(to top right ,yellow 0%,orange 50%,yellow 60%);
+    background-size: 100% 1000px;
+       }
+        table{
+            margin-top: 50px;
+            margin-left: 500px;
+        }
+        input[type="button"]{
+            height: 100%;
+            width: 100%;
+            color: bisque;
+            background-color: black;
+            box-shadow:0px 0px 1px 1px black;
+            border-radius: 2px;
+        }
+        input:hover[type="button"]
+        {
+            background-color: bisque;
+            color: black;
+            border-radius: 3px;
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+       table{
+        background-color: rgb(116, 126, 78);
+        box-shadow:2px 2px black;
+        border-radius: 5px;
+       }
+       #show{
+        background-color:black;
+        color: beige;
+        animation: answer 2s infinite;
+       }
+        input[value="="]{
+            height: 100%;
+        }
+        input[value="CLEAR"]{
+            background-color: red;
+            color: white;
+            text-shadow: 0.5px 0.5px black;
+        }
+        input:hover[value="CLEAR"]{
+            background-color: white;
+            color: red;
+            text-shadow: 0.5px 0.5px black;
+            transform: scale(1.1);
+        }
+        input[value="="]{
+            background-color: red;
+            color: white;
+            text-shadow: 0.5px 0.5px black;
+        }
+        input:hover[value="="]{
+            background-color: white;
+            color: red;
+            text-shadow: 0.5px 0.5px black;
+            transform: scale(1.1);
+        }
+
+        @keyframes answer{
+            0%{
+                color: bisque;
+            }
+            50%{
+                color: aqua;
+            }
+            100%{
+                color: red;
+            }
+        }
+    
+
+       </style>
+</head>
+<body>
+    <table border="2"  cellpadding="0px" cellspacing="10px">
+        <tr>
+            <td colspan="4"><input type="text" id="show"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="display('1')"></td>
+            <td><input type="button" value="2" onclick="display('2')"></td>
+            <td><input type="button" value="3" onclick="display('3')"></td>
+            <td><input type="button" value="+" onclick="display('+')"></td>
+        </tr>
+       <tr>
+        <td><input type="button" value="4" onclick="display('4')"></td>
+        <td><input type="button" value="5" onclick="display('5')"></td>
+        <td><input type="button" value="6" onclick="display('6')"></td>
+        <td><input type="button" value="-" onclick="display('-')"></td>
+
+       </tr>
+       <tr>
+        <td><input type="button" value="7" onclick="display('7')"></td>
+        <td><input type="button" value="8" onclick="display('8')"></td>
+        <td><input type="button" value="9" onclick="display('9')"></td>
+        <td><input type="button" value="*" onclick="display('*')"></td>
+
+       </tr>
+       <tr>
+       <td><input type="button" value="." onclick="display('.')"></td>
+       <td><input type="button" value="0" onclick="display('0')"></td>
+       <td><input type="button" value="%" onclick="display('%')"></td>
+       <td><input type="button" value="/" onclick="display('/')"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"><input type="button" value="CLEAR" class="oper" onclick="clr()"></td>
+        <td colspan="2"><input type="button" value="=" class="oper" onclick="solve()"></td>
+    </tr>
+    </table>
+<script>
+      function display(data)
+      {
+        document.getElementById("show").value+=data
+      }
+      function clr()
+      {
+        document.getElementById("show").value=""
+      }
+      function solve()
+      {
+        let x=document.getElementById("show").value
+        let y=eval(x)
+        document.getElementById("show").value=y
+      }
+</script>
+</body>
+</html>

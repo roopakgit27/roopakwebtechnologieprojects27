@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image:repeating-linear-gradient(to top right ,yellow 0%,orange 50%,yellow 60%);
+    background-size: 100% 1000px;
+        }
+        #main{
+    width:100% ;
+    height: 100%;
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+#div1{
+background-image:repeating-linear-gradient(to top right ,green 0%,red 50%,green 60%);
+width: 400px;
+height: 400px;
+box-shadow: 3px 2px green;
+border-radius: 3px ;
+margin-left: 50px;
+}
+#div2{
+    background-image:repeating-linear-gradient(to top right ,green 0%,red 50%,green 60%);
+ width: 400px;
+ height: 400px;
+ box-shadow: 3px 2px green;
+ border-radius: 3px ;
+ margin-left: 300px;
+}
+textarea{
+margin-top: 20px;
+margin-left: 40px;
+width: 320px;
+height: 350px;
+align-items: center;
+align-content: center;
+background-color: darkgray;
+}
+p{
+    margin-top: 150px;
+    text-align: center;
+    color: yellow;
+    font-size: 50px;
+    animation: answer 2s infinite;
+}
+@keyframes answer{
+            0%{
+                color: BLUE;
+        rotate: 45deg;
+                
+            }
+            25%{
+                color: yellow;
+        rotate: 90deg;
+            }
+            50%{
+                color: yellow;
+        rotate: 180deg;
+
+            }
+            75%{
+                color: yellow;
+        rotate: 270deg;
+            }
+            100%{
+                color: cyan;
+        rotate: 360deg;
+
+            }
+        }
+    </style>
+    <div id="main">
+        <div id="div1"><textarea id="text1" rows="5" cols="30" oninput="mirrorText()" ></textarea>
+        </div>
+        <div id="div2"> 
+           <strong> <p id="mirrorText"></p></strong></div>
+        </div>
+<script>
+    function mirrorText() {
+    var text1 = document.getElementById("text1").value;
+    var mirrorText = document.getElementById("mirrorText");
+    mirrorText.innerHTML = text1.split('').reverse().join('');
+}
+</script>
+</body>
+</html>

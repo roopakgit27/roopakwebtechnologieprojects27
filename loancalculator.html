@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        div{
+            background-color: cadetblue;
+            width:250px;
+            height: 290px;
+            margin-top: 100px;
+        }
+        label{
+            color: antiquewhite;
+        }
+        sub{
+            margin-left:-90px;
+        }
+    </style>
+</head>
+<body>
+    <center><div><h2 style="color: antiquewhite;">Loan calculator</h2>
+   <sub><label>Loan amount $</label></sub>
+   <br><input type="number" id="p" oninput="cal()"><br><br>
+   <sub><label>Interest Rate %</label></sub><br><input type="number" id="t" oninput="cal()"><br><br>
+   <sub><label>Months to pay</label></sub><br><input type="number" id="r" oninput="cal()"><br><br>
+   <label id="show"></label>
+    </div></center>
+    <script>
+function cal(){
+       let x=document.getElementById("p").value;
+       let y=document.getElementById("t").value;
+       let z=document.getElementById("r").value;
+       if (x>0&y>0&z>0){
+        let ans=(x*y*z)/100;
+        document.getElementById("show").innerHTML="Monthly payment:"+ans+"rs/-"
+        document.getElementById("show").style.color="red"
+       }else{
+        document.getElementById("show").innerHTML="Enter valid input"
+        document.getElementById("show").style.color="red"
+       }
+
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+#main{
+    width:100% ;
+    height: 100%;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+#div1{
+background-color: yellow;
+width: 400px;
+height: 400px;
+box-shadow: 3px 2px green;
+border-radius: 3px ;
+margin-left: 50px;
+}
+#div2{
+background-color: yellow;
+ width: 400px;
+ height: 400px;
+ box-shadow: 3px 2px green;
+ border-radius: 3px ;
+ margin-left: 300px;
+}
+textarea{
+margin-top: 20px;
+margin-left: 30px;
+align-items: center;
+align-content: center;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2 {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+    
+    <div id="div1">
+        <textarea id="text1" rows="5" cols="30" onchange="mirrorText()"></textarea>
+    </div>
+    <div id="div2">
+        <p id="mirrorText"></p>
+    </div>
+<script>
+    function mirrorText() {
+    var text1 = document.getElementById("text1").value;
+    var mirrorText = document.getElementById("mirrorText");
+    mirrorText.innerHTML = text1.split('').reverse().join('');
+    }
+</script>
+</body>
+</html>
